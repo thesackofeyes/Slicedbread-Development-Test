@@ -134,6 +134,11 @@ variant-selects {
 
 /* Custom Styles for Image Swatches */
 
+.swatch-shape__circle .color-swatch__container,
+.swatch-shape__circle .image-swatch__container img {
+    border-radius: 50%;
+}
+
 .product-form__input--pill.image-swatches input[type=radio]+label{
     display: flex;
     width: fit-content;
