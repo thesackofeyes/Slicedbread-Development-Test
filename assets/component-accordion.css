@@ -58,13 +58,13 @@
 }
 
 .icon--type-check_mark_in_circle{
-  height: 22px;
-  width: 22px;
+  height: 16px;
+  width: 16px;
 }
 
 .accordion .summary__title {
     display: flex;
     flex: 1;
     align-items: center;
-    gap: 18px;
+    gap: 16px;
 }
