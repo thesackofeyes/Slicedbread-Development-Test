@@ -132,6 +132,36 @@ variant-selects {
   box-shadow: 0 0 0 0.3rem rgb(var(--color-background)), 0 0 0 0.5rem rgba(var(--color-foreground), 0.55);
 }
 
+/* Custom Styles for Image Swatches */
+
+.product-form__input--pill.image-swatches input[type=radio]+label{
+    display: flex;
+    width: fit-content;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.product-form__input--pill.color-swatches input[type=radio]+label 
+{
+    display: flex;
+    width: fit-content;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.image-swatch__container img {
+    height: 30px;
+    width: 30px;
+}
+
+.image-swatch__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+} 
+
 /* Custom styles for Swatch display type */
 .product-form__input--swatch {
   display: flex;

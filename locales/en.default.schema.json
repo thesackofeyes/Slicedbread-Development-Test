@@ -872,7 +872,10 @@
                 "label": "Dropdown"
               },
               "options__2": {
-                "label": "Pills"
+                "label": "Colour Swatch"
+              },
+              "options__3": { 
+                "label": "Image Swatch"
               }
             },
             "swatch_shape": {

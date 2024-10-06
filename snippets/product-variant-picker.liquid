@@ -21,13 +21,17 @@
 
         if swatch_count > 0 and block.settings.swatch_shape != 'none'
           if block.settings.picker_type == 'dropdown'
-            assign picker_type = 'swatch_dropdown'
-          else
-            assign picker_type = 'swatch'
+            assign picker_type = 'swatch-dropdown'
+          endif
+          if block.settings.picker_type == 'button'
+            assign picker_type = 'swatch-color'
+          endif
+          if block.settings.picker_type == 'button-image'
+            assign picker_type = 'swatch-image'
           endif
         endif
       -%}
-      {%- if picker_type == 'swatch' -%}
+      {%- if picker_type == 'swatch-color' -%}
         <fieldset class="js product-form__input product-form__input--swatch">
           <legend class="form__label">
             {{ option.name }}:
@@ -42,8 +46,8 @@
             picker_type: picker_type
           %}
         </fieldset>
-      {%- elsif picker_type == 'button' -%}
-        <fieldset class="js product-form__input product-form__input--pill">
+      {%- elsif picker_type == 'button' or picker_type == 'button-image' -%}
+        <fieldset class="js product-form__input product-form__input--pill{%- if picker_type == 'button-image' %} image-swatches{% endif %}{%- if picker_type == 'button' %} color-swatches{% endif %}">
           <legend class="form__label">{{ option.name }}</legend>
           {% render 'product-variant-options',
             product: product,
@@ -52,6 +56,7 @@
             picker_type: picker_type
           %}
         </fieldset>
+
       {%- else -%}
         <div class="product-form__input product-form__input--dropdown">
           <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">

@@ -77,24 +77,70 @@
       additional_props: input_dataset
     %}
   {%- elsif picker_type == 'button' -%}
-    <input
-      type="radio"
-      id="{{ input_id }}"
-      name="{{ input_name | escape }}"
-      value="{{ value | escape }}"
-      form="{{ product_form_id }}"
-      {% if value.selected %}
-        checked
-      {% endif %}
-      {% if option_disabled %}
-        class="disabled"
-      {% endif %}
-      {{ input_dataset }}
-    >
-    <label for="{{ input_id }}">
-      {{ value -}}
-      {{ label_unavailable }}
-    </label>
+  
+  <input
+  type="radio"
+  id="{{ input_id }}"
+  name="{{ input_name | escape }}"
+  value="{{ value | escape }}"
+  form="{{ product_form_id }}"
+  {% if value.selected %}
+    checked
+  {% endif %}
+  {% if option_disabled %}
+    class="disabled"
+  {% endif %}
+  {{ input_dataset }}
+>
+<label for="{{ input_id }}">
+
+{% assign color_patterns = product.metafields.shopify.color-pattern %}
+
+{% if color_patterns %}
+  {% for color_pattern in color_patterns.value %}
+    {% if color_pattern.label == value %}
+    <div class="color-swatch__container" style="width: 30px; height: 30px; background: {{ color_pattern.color }};">
+      </div>
+    {% endif %}
+  {% endfor %}
+{% endif %}
+  {{ value }}
+  {{ label_unavailable }}
+</label>
+    
+
+    {%- elsif picker_type == 'button-image' -%}
+<input
+  type="radio"
+  id="{{ input_id }}"
+  name="{{ input_name | escape }}"
+  value="{{ value | escape }}"
+  form="{{ product_form_id }}"
+  {% if value.selected %}
+    checked
+  {% endif %}
+  {% if option_disabled %}
+    class="disabled"
+  {% endif %}
+  {{ input_dataset }}
+>
+<label for="{{ input_id }}">
+
+{% assign color_patterns = product.metafields.shopify.color-pattern %}
+
+{% if color_patterns %}
+  {% for color_pattern in color_patterns.value %}
+    {% if color_pattern.label == value %}
+    <div class="image-swatch__container">
+      {{ color_pattern.image | img_tag: 'small' }}
+      </div>
+    {% endif %}
+  {% endfor %}
+{% endif %}
+  {{ value }}
+  {{ label_unavailable }}
+</label>
+
   {%- elsif picker_type == 'dropdown' or picker_type == 'swatch_dropdown' -%}
     <option
       id="{{ input_id }}"
