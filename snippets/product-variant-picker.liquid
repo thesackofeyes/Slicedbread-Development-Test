@@ -40,22 +40,27 @@
               {{- option.selected_value -}}
             </span>
           </legend>
+          <div class="product-option__container">
           {% render 'product-variant-options',
             product: product,
             option: option,
             block: block,
             picker_type: picker_type
           %}
+          </div>
         </fieldset>
       {%- elsif picker_type == 'button' or picker_type == 'button-image' -%}
         <fieldset class="js product-form__input product-form__input--pill{%- if picker_type == 'button-image' %} image-swatches{% endif %}{%- if picker_type == 'button' %} color-swatches{% endif %}">
           <legend class="form__label">{{ option.name }}</legend>
+          <div class="product-option__container">
+
           {% render 'product-variant-options',
             product: product,
             option: option,
             block: block,
             picker_type: picker_type
           %}
+          </div>
         </fieldset>
 
       {%- else -%}

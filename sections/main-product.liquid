@@ -105,6 +105,33 @@
                     </h2>
                   </a>
                 </div>
+
+             {% if product.metafields.custom.compatible_devices != blank %}
+  <div class="accordion">
+    <details>
+      <summary class="summary">
+        <div class="summary__title">
+        <svg class="icon icon--small icon--type-check_mark_in_circle" stroke-width="1" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><circle stroke="currentColor" fill="none" cx="8" cy="8" r="6.6666665"></circle>
+      <path stroke="currentColor" fill="none" transform="translate(5.0003335,6.0003335)" d="m 6,0 -4,4 L 0,2.1818182"></path></svg>
+          <h3>Compatible Devices</h3>
+        </div>
+        <div class="icon-caret">
+          <!-- You can add an icon here if needed -->
+        </div>
+      </summary>
+      <div class="accordion__content">
+        <ul>
+          {% assign compatible_devices = product.metafields.custom.compatible_devices.value %}
+          {% for device in compatible_devices %}
+            <li>{{ device }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </details>
+  </div>
+{% endif %}
+
+
               {%- when 'price' -%}
                 <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
                   {%- render 'price',

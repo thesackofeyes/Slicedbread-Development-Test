@@ -93,8 +93,7 @@ variant-selects {
 }
 
 .product-form__input--pill input[type='radio']:checked + label {
-  background-color: rgb(var(--color-foreground));
-  color: rgb(var(--color-background));
+    outline: 2px solid black;
 }
 
 @media screen and (forced-colors: active) {
@@ -138,27 +137,25 @@ variant-selects {
 .swatch-shape__circle .image-swatch__container img {
     border-radius: 50%;
 }
-
+.product-form__input--pill.color-swatches input[type=radio]+label,
 .product-form__input--pill.image-swatches input[type=radio]+label{
     display: flex;
     width: fit-content;
     justify-content: center;
     align-items: center;
     gap: 12px;
-}
-
-.product-form__input--pill.color-swatches input[type=radio]+label 
-{
-    display: flex;
-    width: fit-content;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
+    padding: 10px;
 }
 
 .image-swatch__container img {
-    height: 30px;
-    width: 30px;
+    height: 22px;
+    width: 22px;
+}
+
+.product-option__container {
+    display: flex;
+    gap: 6px;
+    text-wrap: nowrap;
 }
 
 .image-swatch__container {

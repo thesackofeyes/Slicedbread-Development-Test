@@ -56,3 +56,15 @@
 .accordion__content img {
   max-width: 100%;
 }
+
+.icon--type-check_mark_in_circle{
+  height: 22px;
+  width: 22px;
+}
+
+.accordion .summary__title {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    gap: 18px;
+}
