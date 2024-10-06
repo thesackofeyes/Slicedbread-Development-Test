@@ -435,10 +435,12 @@
 
 .banner__heading {
   margin-bottom: 0;
+  font-weight: 700;
 }
 
 .banner__box .banner__heading + * {
   margin-top: 1rem;
+  color: white;
 }
 
 .banner__buttons {

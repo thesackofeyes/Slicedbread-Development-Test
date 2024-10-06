@@ -48,6 +48,11 @@
             "show_gift_card_recipient": true
           }
         },
+        "custom_details_accordions_ztaCLP": {
+          "type": "custom_details_accordions",
+          "settings": {
+          }
+        },
         "description": {
           "type": "description",
           "settings": {
@@ -67,6 +72,7 @@
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
+        "custom_details_accordions_ztaCLP",
         "description",
         "share"
       ],
@@ -84,6 +90,81 @@
         "enable_video_looping": false,
         "padding_top": 36,
         "padding_bottom": 12
+      }
+    },
+    "image_banner_GpVpfG": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_MQaRpA": {
+          "type": "heading",
+          "settings": {
+            "heading": "ICON Woolenex",
+            "heading_size": "hxxl"
+          }
+        },
+        "text_kcBX3r": {
+          "type": "text",
+          "settings": {
+            "text": "Refined durability with technical ability, Woolenex is incredibly lightweight, weather repellent + fade and tear resistant.",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_MQaRpA",
+        "text_kcBX3r"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/Incase_ICON_Case_Woolenex_DT_1440x700_7cf232a7-96e2-4185-b859-0f769a678852.webp",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "desktop_content_position": "top-left",
+        "show_text_box": false,
+        "desktop_content_alignment": "left",
+        "color_scheme": "scheme-4",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "image_banner_DEMDfC": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_mcyXyF": {
+          "type": "heading",
+          "settings": {
+            "heading": "ICON Pebbled Vegan Leather",
+            "heading_size": "hxxl"
+          }
+        },
+        "text_G47hwh": {
+          "type": "text",
+          "settings": {
+            "text": "Designed to innovate and elevate with premium vegan leather. Available in pebbled brown. ",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_mcyXyF",
+        "text_G47hwh"
+      ],
+      "custom_css": [
+        ".banner__heading{max-width: 17ch;}"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/Incase_ICON_Case_Pebbled_Plant_Leather_DT_1440x700_15b0d0ce-0f94-46f5-a307-ce9c0db1d518.webp",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "desktop_content_position": "middle-right",
+        "show_text_box": false,
+        "desktop_content_alignment": "right",
+        "color_scheme": "scheme-4",
+        "image_behavior": "none",
+        "mobile_content_alignment": "right",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
       }
     },
     "related-products": {
@@ -107,6 +188,8 @@
   },
   "order": [
     "main",
+    "image_banner_GpVpfG",
+    "image_banner_DEMDfC",
     "related-products"
   ]
 }
