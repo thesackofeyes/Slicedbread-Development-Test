@@ -2025,6 +2025,9 @@
         "quantity_selector": {
           "name": "Quantity selector"
         },
+        "custom_details_accordions": {
+          "name": "Custom Metafield Accordion"
+        },
         "variant_picker": {
           "name": "Variant picker",
           "settings": {

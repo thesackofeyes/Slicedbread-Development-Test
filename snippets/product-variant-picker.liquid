@@ -4,9 +4,10 @@
   Accepts:
   - product: {Object} product object.
   - block: {Object} passing the block information.
-  - product_form_id: {String} Id of the product form to which the variant picker is associated.
   Usage:
-  {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
+  {% render 'product-variant-picker', product: product, block: block %}
+
+  This snippet is used to render the custom metafield accordion information within the product form.
 {% endcomment %}
 {%- unless product.has_only_default_variant -%}
   <variant-selects

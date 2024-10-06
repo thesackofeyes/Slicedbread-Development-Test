@@ -111,8 +111,10 @@
                     <details>
                       <summary class="summary">
                         <div class="summary__title">
-                        <svg class="icon icon--small icon--type-check_mark_in_circle" stroke-width="1" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><circle stroke="currentColor" fill="none" cx="8" cy="8" r="6.6666665"></circle>
-                      <path stroke="currentColor" fill="none" transform="translate(5.0003335,6.0003335)" d="m 6,0 -4,4 L 0,2.1818182"></path></svg>
+                        <svg class="icon icon--small icon--type-check_mark_in_circle" stroke-width="1" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                          <circle stroke="currentColor" fill="none" cx="8" cy="8" r="6.6666665"></circle>
+                          <path stroke="currentColor" fill="none" transform="translate(5.0003335,6.0003335)" d="m 6,0 -4,4 L 0,2.1818182"></path>
+                        </svg>
                           <span>Compatible Devices</span>
                         </div>
                       </summary>
@@ -483,6 +485,9 @@
                   assign share_url = product.selected_variant.url | default: product.url | prepend: request.origin
                   render 'share-button', block: block, share_link: share_url
                 %}
+
+              {% when 'custom_details_accordions' %}
+                {% render 'custom-details-accordions', product: product, block: block %}
 
               {%- when 'variant_picker' -%}
                 {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
@@ -872,6 +877,12 @@
       "type": "quantity_selector",
       "name": "t:sections.main-product.blocks.quantity_selector.name",
       "limit": 1
+    },
+    {
+      "type": "custom_details_accordions",
+      "name": "t:sections.main-product.blocks.custom_details_accordions.name",
+      "limit": 1,
+      "settings": []
     },
     {
       "type": "variant_picker",

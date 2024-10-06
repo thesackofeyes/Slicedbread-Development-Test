@@ -1,0 +1,114 @@
+{% comment %}
+  Renders custom metafield accordions
+
+  Accepts:
+  - product: {Object} product object.
+  - block: {Object} passing the block information.
+  Usage:
+  {% render 'custom-details-accordions', product: product, block: block %}
+
+  This snippet is used to render the custom metafield accordion information within the product form.
+{% endcomment %}
+
+<div class="custom-accordions">
+
+{% if product.metafields.custom.description_accordion_content != blank %}
+    <div class="accordion">
+        <details>
+            <summary class="summary">
+                <div class="summary__title">
+                    <svg class="icon icon--small icon--type-check_mark_in_circle" stroke-width="1" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                        <circle stroke="currentColor" fill="none" cx="8" cy="8" r="6.6666665"></circle>
+                        <path stroke="currentColor" fill="none" transform="translate(5.0003335,6.0003335)" d="m 6,0 -4,4 L 0,2.1818182"></path>
+                    </svg>
+                    <span>Description</span>
+                </div>
+            </summary>
+            <div class="accordion__content">
+                <p>{{ product.metafields.custom.description_accordion_content }}</p>
+            </div>
+        </details>
+    </div>
+{% endif %}
+
+
+
+
+{% if product.metafields.custom.features_accordion_content != blank %}
+    <div class="accordion">
+        <details>
+            <summary class="summary">
+                <div class="summary__title">
+                    <svg class="icon icon--small icon--type-check_mark_in_circle" stroke-width="1" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                        <circle stroke="currentColor" fill="none" cx="8" cy="8" r="6.6666665"></circle>
+                        <path stroke="currentColor" fill="none" transform="translate(5.0003335,6.0003335)" d="m 6,0 -4,4 L 0,2.1818182"></path>
+                    </svg>
+                    <span>Features</span>
+                </div>
+            </summary>
+            <div class="accordion__content">
+                <ul>
+                    {% assign features = product.metafields.custom.features_accordion_content.value %}
+                    {% for feature in features %}
+                        <li>{{ feature | strip }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </details>
+    </div>
+{% endif %}
+
+
+
+{% if product.metafields.custom.dimensions_accordion_content != blank %}
+    <div class="accordion">
+        <details>
+            <summary class="summary">
+                <div class="summary__title">
+                    <svg class="icon icon--small icon--type-check_mark_in_circle" stroke-width="1" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                        <circle stroke="currentColor" fill="none" cx="8" cy="8" r="6.6666665"></circle>
+                        <path stroke="currentColor" fill="none" transform="translate(5.0003335,6.0003335)" d="m 6,0 -4,4 L 0,2.1818182"></path>
+                    </svg>
+                    <span>Dimensions</span>
+                </div>
+            </summary>
+            <div class="accordion__content">
+                <ul>
+                    {% assign dimensions = product.metafields.custom.dimensions_accordion_content | split: ',' %}
+                    {% for dimension in dimensions %}
+                        <li>{{ dimension | strip }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </details>
+    </div>
+{% endif %}
+
+
+
+{% if product.metafields.custom.materials_accordion_content != blank %}
+    <div class="accordion">
+        <details>
+            <summary class="summary">
+                <div class="summary__title">
+                    <svg class="icon icon--small icon--type-check_mark_in_circle" stroke-width="1" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                        <circle stroke="currentColor" fill="none" cx="8" cy="8" r="6.6666665"></circle>
+                        <path stroke="currentColor" fill="none" transform="translate(5.0003335,6.0003335)" d="m 6,0 -4,4 L 0,2.1818182"></path>
+                    </svg>
+                    <span>Materials</span>
+                </div>
+            </summary>
+            <div class="accordion__content">
+                <ul>
+                    {% assign materials = product.metafields.custom.materials_accordion_content.value %}
+                    {% for material in materials %}
+                        <li>{{ material | strip }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </details>
+    </div>
+{% endif %}
+
+
+</div>
